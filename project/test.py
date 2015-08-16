@@ -70,7 +70,7 @@ class AllTests(unittest.TestCase):
 		self.register('Michael', 'michael@realpython.com', 'python','python')
 		self.app.get('register/', follow_redirects=True)
 		response = self.register('Michael', 'michael@realpython.com', 'python', 'python')
-		assertIn('That username and/or email already exist.',response.data)
+		self.assertIn('That username and/or email already exist.',response.data)
 
 	def logout(self):
 		return self.app.get('logout/', follow_redirects=True)
@@ -119,7 +119,7 @@ class AllTests(unittest.TestCase):
 		self.assertIn('This field is required.', response.data)
 
 	def test_users_can_complete_tasks(self):
-		self.create_user('Michael', 'michael@realpython.com', 'python')
+		self.create_user('Michael', 'michael@realpython.com', 'python', 'python')
 		self.login('Michael', 'python')
 		self.app.get('tasks/', follow_redirects=True)
 		self.create_task()
