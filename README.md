@@ -1,0 +1,1 @@
+A Task Management System where a user Logs in or Signs UP to access their Task list. There they can add tasks, mark tasks as complete and delete them. This app is built using the Python web Framework, Flask.
